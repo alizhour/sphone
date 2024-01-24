@@ -1,4 +1,4 @@
-#Fri Nov 03 12:19:11 EET 2023
+#Sat Jan 20 11:33:10 EET 2024
 base.1=/Users/zhour/Desktop/sPhone/android/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
 path.1=classes2.dex
 base.0=/Users/zhour/Desktop/sPhone/android/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
