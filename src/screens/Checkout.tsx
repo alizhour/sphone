@@ -11,7 +11,7 @@ import { calculateKaratForItems } from '../calculateKaratForItems';
 
 type ReduxProps = ConnectedProps<typeof connector>;
 
-const CheckoutScreen = ({ route, getCart, geItemById, getItemOncePriceLatest }: ReduxProps & any) => {
+const CheckoutScreen = ({ route, getCart, geItemById, getItemOncePriceLatest, setSelectedMode }: ReduxProps & any) => {
     const { userData } = route.params;
 
     const [cartData, setCartData] = useState<any>([]);
@@ -113,8 +113,12 @@ const CheckoutScreen = ({ route, getCart, geItemById, getItemOncePriceLatest }: 
     }, [cartData]);
 
     useEffect(() => {
-        fetchData()
-    }, [])
+        if (!userData) {
+            setSelectedMode('Auth')
+        } else {
+            fetchData()
+        }
+    }, [userData])
 
     return (
         <ScrollView

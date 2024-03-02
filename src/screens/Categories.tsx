@@ -40,7 +40,7 @@ const CategoriesScreen = ({ getAllCategories, route }: ReduxProps & any) => {
                         return (
                             <TouchableOpacity key={i} style={styles.Category} onPress={() => handleCategoryPress(e)}>
                                 <Image
-                                    source={{ uri: `https://api.sultangold.net/public${e?.imagePath}` }}
+                                    source={{ uri: `https://apii.test.sultangold.net/public${e?.imagePath}` }}
                                     style={styles.CategoryImage}
                                 />
                                 <Text style={styles.CategoryName}>{e?.englishName}</Text>
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 10,
         left: 10,
-        color: '#fff',
+        color: '#555',
         fontWeight: 'bold'
     },
     CategorySkelelaton: {

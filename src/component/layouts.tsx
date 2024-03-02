@@ -97,22 +97,27 @@ const Layouts = ({ userData, children }: any) => {
             <View style={layoutStyles.navigationItemsContainer}>
                 {
                     sideBarData?.map((item, i) => {
-                        return (
-                            <TouchableOpacity
-                                key={i}
-                                style={layoutStyles.navigationItem}
-                                onPress={() => {
-                                    closeDrawerIfOpen();
-                                    //@ts-ignore
-                                    navigation.navigate(item?.index);
-                                }}
-                            >
-                                <View style={layoutStyles.navigationItemIcon}>
-                                    <Image source={item?.icon} style={{ width: 25, height: 25 }} />
-                                </View>
-                                <Text style={layoutStyles.navigationItemName}>{item?.title}</Text>
-                            </TouchableOpacity>
-                        )
+                        if (item.index === 'Account' && !userData) {
+                            return (<></>);
+                        }
+                        else {
+                            return (
+                                <TouchableOpacity
+                                    key={i}
+                                    style={layoutStyles.navigationItem}
+                                    onPress={() => {
+                                        closeDrawerIfOpen();
+                                        //@ts-ignore
+                                        navigation.navigate(item?.index);
+                                    }}
+                                >
+                                    <View style={layoutStyles.navigationItemIcon}>
+                                        <Image source={item?.icon} style={{ width: 25, height: 25 }} />
+                                    </View>
+                                    <Text style={layoutStyles.navigationItemName}>{item?.title}</Text>
+                                </TouchableOpacity>
+                            )
+                        }
                     })
                 }
             </View>
@@ -196,19 +201,21 @@ const Layouts = ({ userData, children }: any) => {
                     <Image source={bagIconNav} style={{ width: 35, height: 35 }} />
                 )}
             </TouchableOpacity>
-            <TouchableOpacity style={{}}
-                onPress={() => {
-                    // @ts-ignore
-                    navigation.navigate('Account');
-                    setBottomIndex(3)
-                }}
-            >
-                {bottomIndex === 3 ? (
-                    <Image source={userIconNavActive} style={{ width: 35, height: 35 }} />
-                ) : (
-                    <Image source={userIconNav} style={{ width: 35, height: 35 }} />
-                )}
-            </TouchableOpacity>
+            {userData && (
+                <TouchableOpacity style={{}}
+                    onPress={() => {
+                        // @ts-ignore
+                        navigation.navigate('Account');
+                        setBottomIndex(3)
+                    }}
+                >
+                    {bottomIndex === 3 ? (
+                        <Image source={userIconNavActive} style={{ width: 35, height: 35 }} />
+                    ) : (
+                        <Image source={userIconNav} style={{ width: 35, height: 35 }} />
+                    )}
+                </TouchableOpacity>
+            )}
         </View>
     )
 

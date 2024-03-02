@@ -30,7 +30,7 @@ const NewsScreen = ({ getAllNews, route }: ReduxProps & any) => {
         return (
             <TouchableOpacity style={styles.newsItem} onPress={() => handleCategoryPress(item?.id)}>
                 <Image
-                    source={{ uri: `https://api.sultangold.net/public/${item.imagePath}` }}
+                    source={{ uri: `https://apii.test.sultangold.net/public/${item.imagePath}` }}
                     style={styles.newsImage}
                 />
                 <View style={styles.newsInfo}>

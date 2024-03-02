@@ -7,7 +7,7 @@ import {Authorization} from './types';
 import {setData} from './apiStore';
 import {useSelector} from 'react-redux';
 
-const REACT_APP_LARAVEL_BACKEND = 'https://api.sultangold.net/public/api';
+const REACT_APP_LARAVEL_BACKEND = 'https://apii.test.sultangold.net/public/api';
 
 const login = createAsyncThunk(
   'authorization/login',

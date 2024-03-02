@@ -10,7 +10,7 @@ const Slider = ({ data }: any) => {
         <Swiper>
             {data.map((item: any, index: any) => (
                 <View key={index} style={styles.slide}>
-                    <Image source={{ uri: `https://api.sultangold.net/public${item.imagePath}` }} style={styles.image} resizeMode="cover" />
+                    <Image source={{ uri: `https://apii.test.sultangold.net/public${item.imagePath}` }} style={styles.image} resizeMode="cover" />
                     <View style={styles.slideContent}>
                         <Text style={styles.title}>{item.englishTitle}</Text>
                         <Text style={styles.description}>{item.englishDescription}</Text>

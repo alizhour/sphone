@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { HomeScreen } from '../screens/HomeScreen';
@@ -19,7 +19,10 @@ import Layouts from '../component/layouts';
 const Stack = createNativeStackNavigator();
 
 
-const App = ({ userData }: any) => {
+const App = ({ userData, setSelectedMode }: any) => {
+
+    useEffect(() => { console.log('userData-------->', userData) }, [])
+
     return (
         <Layouts
             userData={userData}
@@ -35,12 +38,41 @@ const App = ({ userData }: any) => {
                 <Stack.Screen name="Offers" component={OffersScreen} initialParams={{ userData: userData }} />
                 <Stack.Screen name="Tips" component={TipsScreen} initialParams={{ userData: userData }} />
                 <Stack.Screen name="Category" component={CategoryScreen} initialParams={{ userData: userData }} />
-                <Stack.Screen name="Item" component={ItemScreen} initialParams={{ userData: userData }} />
-                <Stack.Screen name="Cart" component={CartScreen} initialParams={{ userData: userData }} />
+                <Stack.Screen
+                    name="Item"
+                    component={ItemScreen}
+                    initialParams={{
+                        userData: userData,
+                        setSelectedMode: setSelectedMode
+                    }}
+                />
                 <Stack.Screen name="New" component={NewScreen} initialParams={{ userData: userData }} />
                 <Stack.Screen name="Tip" component={TipScreen} initialParams={{ userData: userData }} />
-                <Stack.Screen name="Account" component={AccountScreen} initialParams={{ userData: userData }} />
-                <Stack.Screen name="Checkout" component={CheckoutScreen} initialParams={{ userData: userData }} />
+                {/* RESTRICTED */}
+                <Stack.Screen
+                    name="Cart"
+                    component={CartScreen}
+                    initialParams={{
+                        userData: userData,
+                        setSelectedMode: setSelectedMode
+                    }}
+                />
+                <Stack.Screen
+                    name="Checkout"
+                    component={CheckoutScreen}
+                    initialParams={{
+                        userData: userData,
+                        setSelectedMode: setSelectedMode
+                    }}
+                />
+                <Stack.Screen
+                    name="Account"
+                    component={AccountScreen}
+                    initialParams={{
+                        userData: userData,
+                        setSelectedMode: setSelectedMode
+                    }}
+                />
             </Stack.Navigator>
         </Layouts>
     );

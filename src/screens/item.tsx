@@ -31,7 +31,7 @@ const ItemScreen = ({ addCart }: ReduxProps) => {
     const fetchData = () => {
         const arr = [] as any;
         item?.images?.map((e: any) => {
-            arr.push(`https://api.sultangold.net/public${e?.imagePath}`)
+            arr.push(`https://apii.test.sultangold.net/public${e?.imagePath}`)
         })
         setImages(arr)
     }
@@ -89,15 +89,26 @@ const ItemScreen = ({ addCart }: ReduxProps) => {
                         {item?.englishDescription}
                     </Text>
                 </View>
-                {item?.quantity > 0 ? (
-                    <TouchableOpacity style={styles.actionContainer} onPress={() => { addItemToCart() }}>
-                        <Text style={styles.addToCardButton}>Add To Cart</Text>
-                    </TouchableOpacity>
-                ) : (
-                    <View style={styles.actionContainer}>
-                        <Text style={styles.outOfStock}>OUT OF STOCK</Text>
-                    </View>
-                )}
+                {
+                    userData ? (
+                        <>
+                            {item?.quantity > 0 ? (
+                                <TouchableOpacity style={styles.actionContainer} onPress={() => { addItemToCart() }}>
+                                    <Text style={styles.addToCardButton}>Add To Cart</Text>
+                                </TouchableOpacity>
+                            ) : (
+                                <View style={styles.actionContainer}>
+                                    <Text style={styles.outOfStock}>OUT OF STOCK</Text>
+                                </View>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            <View style={styles.actionContainerMargin}>
+                            </View>
+                        </>
+                    )
+                }
             </ScrollView>
             <Snackbar
                 visible={visible}
@@ -203,6 +214,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 20
+    },
+    actionContainerMargin: {
+        marginBottom: 250
     },
     addToCardButton: {
         width: '90%',

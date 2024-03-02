@@ -13,7 +13,7 @@ import Layouts from '../component/layouts';
 type ReduxProps = ConnectedProps<typeof connector>;
 
 const CartScreen = ({ getCart, geItemById, getItemOncePriceLatest, geItemImagesById, route, removeCart }: ReduxProps & any) => {
-    const { userData } = route.params;
+    const { userData, setSelectedMode } = route.params;
     const navigation = useNavigation();
 
     const [cartData, setCartData] = useState<any>([]);
@@ -153,8 +153,12 @@ const CartScreen = ({ getCart, geItemById, getItemOncePriceLatest, geItemImagesB
     }, [cartData]);
 
     useEffect(() => {
-        fetchData()
-    }, [])
+        if (!userData) {
+            setSelectedMode('Auth')
+        } else {
+            fetchData()
+        }
+    }, [userData])
 
     return (
         <>
@@ -168,7 +172,7 @@ const CartScreen = ({ getCart, geItemById, getItemOncePriceLatest, geItemImagesB
                             <>
                                 <View style={styles.cardItem} key={index}>
                                     <Image
-                                        source={{ uri: `https://api.sultangold.net/public/${e.mainImage}` }}
+                                        source={{ uri: `https://apii.test.sultangold.net/public/${e.mainImage}` }}
                                         style={styles.itemImage}
                                     />
                                     <Text style={styles.detailsName}>{e.englishName}</Text>

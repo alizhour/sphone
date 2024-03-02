@@ -121,7 +121,7 @@ const OffersScreen = ({ getOfferItem, getItemOncePriceLatest, route }: ReduxProp
                     return (
                         <TouchableOpacity key={i} style={styles.item} onPress={() => handleCategoryPress(e)} >
                             <Image
-                                source={{ uri: `https://api.sultangold.net/public${e?.mainImage}` }}
+                                source={{ uri: `https://apii.test.sultangold.net/public${e?.mainImage}` }}
                                 style={styles.itemImage}
                             />
                             <View style={styles.containerLine}>

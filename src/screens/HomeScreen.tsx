@@ -82,7 +82,7 @@ const HomeScreen = ({ getAllCategories, getInternationalGoldPriceLatest, getAllI
             newObj.id = e?.id;
             newObj.name = e?.englishName;
             newObj.englishName = e?.englishName;
-            newObj.imagePath = `https://api.sultangold.net/public${e?.imagePath}`;
+            newObj.imagePath = `https://apii.test.sultangold.net/public${e?.imagePath}`;
 
             categoryArr.push(newObj)
         })
@@ -276,7 +276,7 @@ const HomeScreen = ({ getAllCategories, getInternationalGoldPriceLatest, getAllI
                                 return (
                                     <TouchableOpacity key={i} style={styles.item} onPress={() => handleCategoryPress(e)} >
                                         <Image
-                                            source={{ uri: `https://api.sultangold.net/public${e?.mainImage}` }}
+                                            source={{ uri: `https://apii.test.sultangold.net/public${e?.mainImage}` }}
                                             style={styles.itemImage}
                                         />
                                         <Text style={styles.itemPrice}>{e?.price} KWD</Text>

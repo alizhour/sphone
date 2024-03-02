@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { connect, ConnectedProps } from 'react-redux';
 
@@ -9,8 +9,12 @@ type ReduxProps = ConnectedProps<typeof connector>;
 
 const Tab = createBottomTabNavigator();
 
-const AccountScreen = ({ route }: ReduxProps & any) => {
+const AccountScreen = ({ route, setSelectedMode }: ReduxProps & any) => {
     const { userData } = route.params;
+
+    useEffect(() => {
+        setSelectedMode('Auth')
+    }, [userData])
 
     return (
         <Tab.Navigator

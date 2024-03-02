@@ -1,15 +1,7 @@
 [
     {
-        "merged": "com.sphone.app-merged_res-36:/drawable-xxhdpi_node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sphone.app-res-30:/drawable-xxhdpi/node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png"
-    },
-    {
         "merged": "com.sphone.app-merged_res-36:/drawable-mdpi_src_assets_images_navigation_home.png.flat",
         "source": "com.sphone.app-res-30:/drawable-mdpi/src_assets_images_navigation_home.png"
-    },
-    {
-        "merged": "com.sphone.app-merged_res-36:/drawable-xxxhdpi_node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sphone.app-res-30:/drawable-xxxhdpi/node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
         "merged": "com.sphone.app-merged_res-36:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
@@ -22,10 +14,6 @@
     {
         "merged": "com.sphone.app-merged_res-36:/drawable-mdpi_src_assets_images_navigation_newspaper.png.flat",
         "source": "com.sphone.app-res-30:/drawable-mdpi/src_assets_images_navigation_newspaper.png"
-    },
-    {
-        "merged": "com.sphone.app-merged_res-36:/drawable-mdpi_node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sphone.app-res-30:/drawable-mdpi/node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
         "merged": "com.sphone.app-merged_res-36:/drawable_rn_edit_text_material.xml.flat",
@@ -88,10 +76,6 @@
         "source": "com.sphone.app-main-37:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.sphone.app-merged_res-36:/drawable-xhdpi_node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sphone.app-res-30:/drawable-xhdpi/node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png"
-    },
-    {
         "merged": "com.sphone.app-merged_res-36:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "com.sphone.app-main-37:/mipmap-hdpi/ic_launcher.png"
     },
@@ -132,10 +116,6 @@
         "source": "com.sphone.app-main-37:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.sphone.app-merged_res-36:/drawable-hdpi_node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sphone.app-res-30:/drawable-hdpi/node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backicon.png"
-    },
-    {
         "merged": "com.sphone.app-merged_res-36:/drawable-mdpi_src_assets_images_bottomnavbar_shoppingactive.png.flat",
         "source": "com.sphone.app-res-30:/drawable-mdpi/src_assets_images_bottomnavbar_shoppingactive.png"
     },
@@ -166,10 +146,6 @@
     {
         "merged": "com.sphone.app-merged_res-36:/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "com.sphone.app-main-37:/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "com.sphone.app-merged_res-36:/drawable-mdpi_node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
-        "source": "com.sphone.app-res-30:/drawable-mdpi/node_modules_reactnavigation_bottomtabs_node_modules_reactnavigation_elements_src_assets_backiconmask.png"
     },
     {
         "merged": "com.sphone.app-merged_res-36:/drawable-mdpi_src_assets_images_login_padlock.png.flat",

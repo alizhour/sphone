@@ -56,7 +56,7 @@ const TipScreen = ({ getTipById, getAllTipsCategoryById, getTipArticleById, rout
             <Text style={styles.publishDate}>{newData?.date}</Text>
             <View style={styles.imageContainer}>
                 <Image
-                    source={{ uri: `https://api.sultangold.net/public${newData?.imagePath}` }}
+                    source={{ uri: `https://apii.test.sultangold.net/public${newData?.imagePath}` }}
                     style={styles.newImage}
                 />
             </View>

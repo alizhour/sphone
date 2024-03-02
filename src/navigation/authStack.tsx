@@ -1,13 +1,30 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useFocusEffect } from '@react-navigation/native';
+import { BackHandler } from 'react-native';
 
 import { LoginScreen } from '../screens/LoginScreen';
 import { RegisterScreen } from '../screens/RegisterScreen';
-import { useSelector } from 'react-redux';
 
 const Stack = createNativeStackNavigator();
 
-const AuthStack = () => {
+const AuthStack = ({ setSelectedMode }) => {
+
+    useFocusEffect(
+        React.useCallback(() => {
+            const onBackPress = () => {
+                setSelectedMode('App');
+                return true; // Prevent default behavior (exiting the app)
+            };
+
+            // Add event listener for hardware back press
+            BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+            return () =>
+                BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+        }, [setSelectedMode])
+    );
+
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Login" component={LoginScreen} />

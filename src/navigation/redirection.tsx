@@ -19,16 +19,20 @@ const Redirection = () => {
         }, 1500);
     }, []);
 
-    useEffect(() => {
-        if (someData === null) {
-            setSelectedMode('Auth');
-        }
-        else {
-            setSelectedMode('App');
-            setUserData(someData);
-        }
-    }, [someData]);
+    // useEffect(() => {
+    //     if (someData === null) {
+    //         setSelectedMode('Auth');
+    //     }
+    //     else {
+    //         setSelectedMode('App');
+    //         setUserData(someData);
+    //     }
+    // }, [someData]);
 
+    useEffect(() => {
+        setUserData(someData);
+        setSelectedMode('App');
+    }, [someData])
 
     if (!loadingComplete) {
         return (
@@ -43,9 +47,12 @@ const Redirection = () => {
             {selectedMode === 'App' ? (
                 <AppStack
                     userData={userData}
+                    setSelectedMode={setSelectedMode}
                 />
             ) : selectedMode === 'Auth' ? (
-                <AuthStack />
+                <AuthStack
+                    setSelectedMode={setSelectedMode}
+                />
             ) : null}
         </NavigationContainer>
     )
