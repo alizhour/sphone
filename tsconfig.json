@@ -1,0 +1,9 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "include": ["src/screens", "src/custom.d.ts"],
+  "compilerOptions": {
+    // ...
+    "types": ["react", "react-native"],
+    "typeRoots": ["./node_modules/@types", "./types"],
+  },
+}
