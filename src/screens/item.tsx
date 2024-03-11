@@ -54,7 +54,7 @@ const ItemScreen = ({ addCart }: ReduxProps) => {
     return (
         <>
             <ScrollView style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>{item?.englishName}</Text>
+                <Text style={styles.sectionTitle}>{item?.arabicName}</Text>
                 <View style={styles.sliderContainer}>
                     {images.length < 1 ? (
                         <CategorySkeleton />
@@ -64,29 +64,29 @@ const ItemScreen = ({ addCart }: ReduxProps) => {
                 </View>
                 <View style={styles.detailsContainer}>
                     <View style={styles.detailsRow}>
-                        <Text style={styles.detailsValuePrice}>{item?.price} KWD</Text>
+                        <Text style={styles.detailsValuePrice}>{item?.price} دينار</Text>
                     </View>
                     <View style={styles.detailsRow}>
-                        <Text style={styles.detailsName}>Weight:</Text>
-                        <Text style={styles.detailsValue}>{item?.weight} gram</Text>
+                        <Text style={styles.detailsName}>الوزن:</Text>
+                        <Text style={styles.detailsValue}>{item?.weight} غرام</Text>
                     </View>
                     <View style={styles.detailsRow}>
-                        <Text style={styles.detailsName}>Karat:</Text>
+                        <Text style={styles.detailsName}>العيار:</Text>
                         <Text style={styles.detailsValue}>{item?.karat}K</Text>
                     </View>
                     <View style={styles.detailsRow}>
-                        <Text style={styles.detailsName}>Country:</Text>
+                        <Text style={styles.detailsName}>البلد:</Text>
                         <Text style={styles.detailsValue}>{item?.country}</Text>
                     </View>
                     <View style={styles.detailsRow}>
-                        <Text style={styles.detailsName}>Code:</Text>
+                        <Text style={styles.detailsName}>الكود:</Text>
                         <Text style={styles.detailsValue}>{item?.code}</Text>
                     </View>
                 </View>
                 <View style={styles.descriptionContainer}>
-                    <Text style={[styles.detailsName]}>Description:</Text>
+                    <Text style={[styles.detailsName]}>الوصف:</Text>
                     <Text style={[styles.description]}>
-                        {item?.englishDescription}
+                        {item?.arabicDescription}
                     </Text>
                 </View>
                 {
@@ -94,11 +94,11 @@ const ItemScreen = ({ addCart }: ReduxProps) => {
                         <>
                             {item?.quantity > 0 ? (
                                 <TouchableOpacity style={styles.actionContainer} onPress={() => { addItemToCart() }}>
-                                    <Text style={styles.addToCardButton}>Add To Cart</Text>
+                                    <Text style={styles.addToCardButton}>اضف الى السلة</Text>
                                 </TouchableOpacity>
                             ) : (
                                 <View style={styles.actionContainer}>
-                                    <Text style={styles.outOfStock}>OUT OF STOCK</Text>
+                                    <Text style={styles.outOfStock}>انتهت الكمية</Text>
                                 </View>
                             )}
                         </>
@@ -115,11 +115,11 @@ const ItemScreen = ({ addCart }: ReduxProps) => {
                 onDismiss={hideSnackbar}
                 duration={2000}
                 action={{
-                    label: 'Dismiss',
+                    label: 'حسنا',
                     onPress: hideSnackbar,
                 }}
             >
-                Item added to the card!
+                تم اضافة المنتج للسلة!!
             </Snackbar>
         </>
     )
@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
     sectionContainer: {
         paddingVertical: 12,
         paddingHorizontal: 15,
+        width: '100%',
     },
     sectionTitle: {
         fontSize: 24,
@@ -170,14 +171,16 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         width: '100%',
         marginTop: 24,
-        paddingLeft: 12
+        paddingLeft: 12,
+        direction: 'rtl',
     },
     detailsRow: {
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         gap: 12,
         color: '#555',
-        marginBottom: 8
+        marginBottom: 8,
+        direction: 'rtl',
     },
     detailsName: {
         fontSize: 16,

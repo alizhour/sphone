@@ -12,8 +12,8 @@ const Slider = ({ data }: any) => {
                 <View key={index} style={styles.slide}>
                     <Image source={{ uri: `https://apii.test.sultangold.net/public${item.imagePath}` }} style={styles.image} resizeMode="cover" />
                     <View style={styles.slideContent}>
-                        <Text style={styles.title}>{item.englishTitle}</Text>
-                        <Text style={styles.description}>{item.englishDescription}</Text>
+                        <Text style={styles.title}>{item.arabicTitle}</Text>
+                        <Text style={styles.description}>{item.arabicDescription}</Text>
                         <Button
                             title={item.arabicButtonName}
                             //@ts-ignore

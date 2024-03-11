@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 import { setData } from '../api/apiStore';
 import { DrawerActions } from '@react-navigation/native';
 
-const Layouts = ({ userData, children }: any) => {
+const Layouts = ({ userData, children, setSelectedMode }: any) => {
     const navigation = useNavigation();
     const dispatch = useDispatch();
 
@@ -42,37 +42,37 @@ const Layouts = ({ userData, children }: any) => {
     const sideBarData = [
         {
             index: 'Home',
-            title: 'Home Page',
+            title: 'الصفحة الرئيسية',
             icon: homeIcon
         },
         {
             index: 'Categories',
-            title: 'Categories',
+            title: 'الفئات',
             icon: categoriesIcon
         },
         {
             index: 'News',
-            title: 'News',
+            title: 'الأخبار',
             icon: NewsIcon
         },
         {
             index: 'Tips',
-            title: 'Tips',
+            title: 'النصائح',
             icon: TipsIcon
         },
         {
             index: 'GoldPrice',
-            title: 'Gold Price',
+            title: 'أسعار الذهب',
             icon: priceIcon
         },
         {
             index: 'Offers',
-            title: 'Offers',
+            title: 'العروضات',
             icon: offerIcon
         },
         {
             index: 'Account',
-            title: 'My Account',
+            title: 'حسابي',
             icon: userIconNav
         },
     ]
@@ -121,14 +121,22 @@ const Layouts = ({ userData, children }: any) => {
                     })
                 }
             </View>
-            <TouchableOpacity style={layoutStyles.navigationFooter}>
-                <View style={layoutStyles.navigationItemIcon}>
-                    <Image source={logoutIcon} style={{ width: 25, height: 25 }} />
-                </View>
-                <Text style={layoutStyles.navigationItemName} onPress={() => {
+            {userData ? (
+                <TouchableOpacity style={layoutStyles.navigationFooter} onPress={() => {
                     dispatch(setData(null));
-                }}>Logout</Text>
-            </TouchableOpacity>
+                }}>
+                    <View style={layoutStyles.navigationItemIcon}>
+                        <Image source={logoutIcon} style={{ width: 25, height: 25 }} />
+                    </View>
+                    <Text style={layoutStyles.navigationItemName}>تسجيل الخروج</Text>
+                </TouchableOpacity>
+            ) : (
+                <TouchableOpacity style={layoutStyles.navigationFooter} onPress={() => {
+                    setSelectedMode('Auth')
+                }}>
+                    <Text style={layoutStyles.navigationItemName} >تسجيل الدخول</Text>
+                </TouchableOpacity>
+            )}
         </View>
     );
 

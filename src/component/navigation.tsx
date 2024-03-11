@@ -38,7 +38,7 @@ export const Navigation = ({ setCurrentPage, currentPage, itemsData, itemsPerPag
                         fontSize: 16,
                     }}
                 >
-                    Next
+                    التالي
                 </Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -60,11 +60,11 @@ export const Navigation = ({ setCurrentPage, currentPage, itemsData, itemsPerPag
                         fontSize: 16,
                     }}
                 >
-                    Previous
+                    السابق
                 </Text>
             </TouchableOpacity>
             <Text style={{ color: '#777', marginTop: 5, marginLeft: 5 }}>
-                Page {currentPage} of {Math.ceil(itemsData?.length / itemsPerPage)}
+                الصفحة {currentPage} من {Math.ceil(itemsData?.length / itemsPerPage)}
             </Text>
         </View >
     )

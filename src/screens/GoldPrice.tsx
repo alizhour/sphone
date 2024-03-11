@@ -77,49 +77,49 @@ const GoldScreen = ({ getInternationalGoldPriceLatest, route }: ReduxProps & any
                 />
             }
         >
-            <Text style={styles.sectionTitle}>Gold Prices</Text>
+            <Text style={styles.sectionTitle}>أسعار الذهب</Text>
             <View style={styles.CategoriesContainer}>
                 <View style={styles.priceBoxTime}>
-                    <Text style={styles.priceBoxTimeTitle}>Last Update </Text>
+                    <Text style={styles.priceBoxTimeTitle}>آخر تحديث</Text>
                     <Text style={styles.priceBoxTimeValue}>{goldInternationalPrice?.update}</Text>
                 </View>
                 <View style={styles.flexPrice}>
                     <View style={styles.priceContainer}>
-                        <Text style={styles.priceContainerTitle}>In KWD</Text>
+                        <Text style={styles.priceContainerTitle}>دينار</Text>
                         <View style={styles.priceBox}>
-                            <Text style={styles.priceBoxTitle}>Once Price: </Text>
-                            <Text style={styles.priceBoxValue}>{goldInternationalPriceKwd?.price} KWD</Text>
+                            <Text style={styles.priceBoxTitle}>سعر الأونصة: </Text>
+                            <Text style={styles.priceBoxValue}>{goldInternationalPriceKwd?.price} دينار</Text>
                         </View>
                         <View style={styles.priceBox}>
-                            <Text style={styles.priceBoxTitle}>24K Price: </Text>
-                            <Text style={styles.priceBoxValue}>{goldInternationalPriceKwd?.twentyFour} KWD</Text>
+                            <Text style={styles.priceBoxTitle}>سعر عيار 24 قيراط: </Text>
+                            <Text style={styles.priceBoxValue}>{goldInternationalPriceKwd?.twentyFour} دينار</Text>
                         </View>
                         <View style={styles.priceBox}>
-                            <Text style={styles.priceBoxTitle}>22K Price: </Text>
-                            <Text style={styles.priceBoxValue}>{goldInternationalPriceKwd?.twentyTwo} KWD</Text>
+                            <Text style={styles.priceBoxTitle}>سعر عيار 22 قيراط: </Text>
+                            <Text style={styles.priceBoxValue}>{goldInternationalPriceKwd?.twentyTwo} دينار</Text>
                         </View>
                         <View style={styles.priceBox}>
-                            <Text style={styles.priceBoxTitle}>21K Price: </Text>
-                            <Text style={styles.priceBoxValue}>{goldInternationalPriceKwd?.twentyOne} KWD</Text>
+                            <Text style={styles.priceBoxTitle}>سعر عيار 21 قيراط: </Text>
+                            <Text style={styles.priceBoxValue}>{goldInternationalPriceKwd?.twentyOne} دينار</Text>
                         </View>
                     </View>
                     <View style={styles.priceContainer}>
-                        <Text style={styles.priceContainerTitle}>In USD</Text>
+                        <Text style={styles.priceContainerTitle}>دولار</Text>
                         <View style={styles.priceBox}>
-                            <Text style={styles.priceBoxTitle}>Once Price</Text>
-                            <Text style={styles.priceBoxValue}>{goldInternationalPrice?.price} USD</Text>
+                            <Text style={styles.priceBoxTitle}>سعر الأونصة: </Text>
+                            <Text style={styles.priceBoxValue}>{goldInternationalPrice?.price} دولار</Text>
                         </View>
                         <View style={styles.priceBox}>
-                            <Text style={styles.priceBoxTitle}>Open Price</Text>
-                            <Text style={styles.priceBoxValue}>{goldInternationalPrice?.open_price} USD</Text>
+                            <Text style={styles.priceBoxTitle}>سعر الافتتاح: </Text>
+                            <Text style={styles.priceBoxValue}>{goldInternationalPrice?.open_price} دولار</Text>
                         </View>
                         <View style={styles.priceBox}>
-                            <Text style={styles.priceBoxTitle}>High Price</Text>
-                            <Text style={styles.priceBoxValue}>{goldInternationalPrice?.high_price} USD</Text>
+                            <Text style={styles.priceBoxTitle}>أعلى سعر:</Text>
+                            <Text style={styles.priceBoxValue}>{goldInternationalPrice?.high_price} دولار</Text>
                         </View>
                         <View style={styles.priceBox}>
-                            <Text style={styles.priceBoxTitle}>Low Price</Text>
-                            <Text style={styles.priceBoxValue}>{goldInternationalPrice?.low_price} USD</Text>
+                            <Text style={styles.priceBoxTitle}>أدنى سعر: </Text>
+                            <Text style={styles.priceBoxValue}>{goldInternationalPrice?.low_price} دولار</Text>
                         </View>
                     </View>
                 </View>
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     CategoriesContainer: {
         width: '100%',
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         gap: 12,
         flexWrap: 'wrap',
         marginTop: 30,
@@ -150,10 +150,12 @@ const styles = StyleSheet.create({
         padding: 12,
         borderRadius: 12,
         borderColor: '#ddd',
-        borderWidth: 1
+        borderWidth: 1,
+        direction: 'rtl'
+
     },
     priceBoxTime: {
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         marginTop: 20,
     },
     priceBoxTimeTitle: {
@@ -175,7 +177,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     priceBox: {
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         gap: 10,
         marginTop: 20,
     },

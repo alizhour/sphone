@@ -13,7 +13,9 @@ const AccountScreen = ({ route, setSelectedMode }: ReduxProps & any) => {
     const { userData } = route.params;
 
     useEffect(() => {
-        setSelectedMode('Auth')
+        if (!userData) {
+            setSelectedMode('Auth')
+        }
     }, [userData])
 
     return (

@@ -164,7 +164,7 @@ const CartScreen = ({ getCart, geItemById, getItemOncePriceLatest, geItemImagesB
         <>
             <ScrollView style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>
-                    Cart
+                    عربة التسوق
                 </Text>
                 {cartData.length > 0 ? (
                     <View style={styles.cardItems}>
@@ -175,13 +175,13 @@ const CartScreen = ({ getCart, geItemById, getItemOncePriceLatest, geItemImagesB
                                         source={{ uri: `https://apii.test.sultangold.net/public/${e.mainImage}` }}
                                         style={styles.itemImage}
                                     />
-                                    <Text style={styles.detailsName}>{e.englishName}</Text>
+                                    <Text style={styles.detailsName}>{e.arabicName}</Text>
                                     <View style={styles.detailsRow}>
-                                        <Text style={styles.detailsName}>Weight:</Text>
-                                        <Text style={styles.detailsValue}>{e.weight.toFixed(2)} Gram</Text>
+                                        <Text style={styles.detailsName}>الوزن:</Text>
+                                        <Text style={styles.detailsValue}>{e.weight.toFixed(2)} غرام</Text>
                                     </View>
                                     <View style={styles.detailsRow}>
-                                        <Text style={styles.detailsName}>Karat:</Text>
+                                        <Text style={styles.detailsName}>العيار:</Text>
                                         <Text style={styles.detailsValue}>{e.karat}K</Text>
                                     </View>
                                     <QuantityInput
@@ -193,27 +193,27 @@ const CartScreen = ({ getCart, geItemById, getItemOncePriceLatest, geItemImagesB
                                         }}
                                         onIncrease={() => updateQuantity(e.id, '+')}
                                     />
-                                    <Text style={styles.removeButton}>{e?.price * e?.quantitySelected} KWD</Text>
-                                    <Text style={styles.removeButtonRed} onPress={() => { removeFromCart(e?.cartId) }}>Remove</Text>
+                                    <Text style={styles.removeButton}>{e?.price * e?.quantitySelected} دينار</Text>
+                                    <Text style={styles.removeButtonRed} onPress={() => { removeFromCart(e?.cartId) }}>إزالة</Text>
                                 </View>
                             </>
                         ))}
                         <View style={styles.detailsRowTotal}>
-                            <Text style={styles.detailsNameTotal}>Total:</Text>
-                            <Text style={styles.detailsValueTotal}>{cartTotal} KWD</Text>
+                            <Text style={styles.detailsNameTotal}>المجموع:</Text>
+                            <Text style={styles.detailsValueTotal}>{cartTotal} دينار</Text>
                         </View>
-                        <Text style={styles.note}>NOTE: We will redirect you to our website to complete the paying process.All this process are secure!</Text>
+                        <Text style={styles.note}>ملاحظة: سنقوم بتوجيهك إلى موقعنا على الويب لإكمال عملية الدفع. جميع هذه العمليات آمنة!</Text>
                         <TouchableOpacity onPress={() => {
                             Linking.openURL(`https://www.sultangold.net/paying/${userData?.access_token}`);
                         }}>
                             <Text style={styles.detailsValueCheckout}>
-                                CHECKOUT
+                                اتمام الطلب
                             </Text>
                         </TouchableOpacity>
                     </View>
                 ) : (
                     <View >
-                        <Text style={styles.detailsValueTotal}>Cart Empty!</Text>
+                        <Text style={styles.detailsValueTotal}>السلة فارغة!</Text>
                     </View>
                 )}
             </ScrollView >
@@ -222,11 +222,11 @@ const CartScreen = ({ getCart, geItemById, getItemOncePriceLatest, geItemImagesB
                 onDismiss={hideSnackbar}
                 duration={2000}
                 action={{
-                    label: 'Dismiss',
+                    label: 'حسنا',
                     onPress: hideSnackbar,
                 }}
             >
-                Item Removed from your cart
+                تم ازالة المنتج من السلة!
             </Snackbar>
         </>
     );

@@ -72,10 +72,10 @@ const LoginScreen = ({ navigation, login }: ILoginScreen & ReduxProps) => {
                         color: '#333',
                         marginBottom: 30,
                     }}>
-                    Login
+                    تسجيل دخول
                 </Text>
                 <InputField
-                    label={'Email address'}
+                    label={'البريد الإلكتروني'}
                     icon={<Image source={emailIcon} style={styles.emailIcon} />}
                     keyboardType="email"
                     onChangeText={formik.handleChange('email')}
@@ -83,14 +83,14 @@ const LoginScreen = ({ navigation, login }: ILoginScreen & ReduxProps) => {
                     value={formik.values.email}
                 />
                 <InputField
-                    label={'Password'}
+                    label={'كلمة المرور'}
                     icon={<Image source={passwordIcon} style={styles.emailIcon} />}
                     inputType="password"
                     onChangeText={formik.handleChange('password')}
                     onBlur={formik.handleBlur('password')}
                     value={formik.values.password}
                 />
-                <CustomButton label={"Login"} onPress={() => formik.handleSubmit()} />
+                <CustomButton label={"تسجيل دخول"} onPress={() => formik.handleSubmit()} />
 
                 {loading && <ActivityIndicator size="large" color="#333" />}
 
@@ -100,16 +100,16 @@ const LoginScreen = ({ navigation, login }: ILoginScreen & ReduxProps) => {
 
                 <View
                     style={{
-                        flexDirection: 'row',
+                        flexDirection: 'row-reverse',
                         justifyContent: 'center',
                         marginBottom: 30,
                     }}>
                     <Text style={{ color: '#666', paddingRight: 5 }}>
-                        New to the Sultan Gold?
+                        ليس لديك حساب؟
                     </Text>
                     <TouchableOpacity onPress={() => navigation.navigate('Register')}>
                         <Text style={{ color: '#c19858', fontWeight: '700' }}>
-                            Register
+                            إنشاء حساب
                         </Text>
                     </TouchableOpacity>
                 </View>

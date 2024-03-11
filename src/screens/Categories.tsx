@@ -31,7 +31,7 @@ const CategoriesScreen = ({ getAllCategories, route }: ReduxProps & any) => {
 
     return (
         <ScrollView style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>Categories</Text>
+            <Text style={styles.sectionTitle}>الفئات</Text>
             <View style={styles.CategoriesContainer}>
                 {categoryData?.length === 0 ? (
                     <CategorySkeleton />
@@ -43,7 +43,7 @@ const CategoriesScreen = ({ getAllCategories, route }: ReduxProps & any) => {
                                     source={{ uri: `https://apii.test.sultangold.net/public${e?.imagePath}` }}
                                     style={styles.CategoryImage}
                                 />
-                                <Text style={styles.CategoryName}>{e?.englishName}</Text>
+                                <Text style={styles.CategoryName}>{e?.arabicName}</Text>
                             </TouchableOpacity>
                         )
                     }))}
@@ -143,13 +143,14 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     CategoryName: {
-        fontSize: 16,
+        fontSize: 20,
         fontStyle: 'italic',
         position: 'absolute',
         bottom: 10,
         left: 10,
         color: '#555',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textShadowColor: '#555'
     },
     CategorySkelelaton: {
         borderWidth: 1,

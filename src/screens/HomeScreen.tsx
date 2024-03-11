@@ -20,16 +20,16 @@ const PricesSection = ({ oncePrice, price24K, price22K, price21K }: any) => {
     return (
         <View style={styles.secondSection}>
             <Text style={styles.secondSectionText}>
-                <Text style={styles.priceLabel}>Once Price:</Text> {oncePrice} KWD
+                <Text style={styles.priceLabel}>سعر الأونصة بالدينار:</Text> {oncePrice} دينار
             </Text>
             <Text style={styles.secondSectionText}>
-                <Text style={styles.priceLabel}>24K Price:</Text> {price24K} KWD
+                <Text style={styles.priceLabel}>سعر عيار 24 قيراط: </Text> {price24K} دينار
             </Text>
             <Text style={styles.secondSectionText}>
-                <Text style={styles.priceLabel}>22K Price:</Text> {price22K} KWD
+                <Text style={styles.priceLabel}>سعر عيار 22 قيراط: </Text> {price22K} دينار
             </Text>
             <Text style={styles.secondSectionText}>
-                <Text style={styles.priceLabel}>21K Price:</Text> {price21K} KWD
+                <Text style={styles.priceLabel}>سعر عيار 21 قيراط: </Text> {price21K} دينار
             </Text>
         </View>
     );
@@ -80,7 +80,7 @@ const HomeScreen = ({ getAllCategories, getInternationalGoldPriceLatest, getAllI
         getAllCategoriesRes?.map((e: any, index: any) => {
             const newObj = {} as any;
             newObj.id = e?.id;
-            newObj.name = e?.englishName;
+            newObj.name = e?.arabicName;
             newObj.englishName = e?.englishName;
             newObj.imagePath = `https://apii.test.sultangold.net/public${e?.imagePath}`;
 
@@ -257,16 +257,16 @@ const HomeScreen = ({ getAllCategories, getInternationalGoldPriceLatest, getAllI
                 <View style={styles.sliderContainer}>
                     <Slider data={sliders} />
                 </View>
-                <Text style={styles.sectionTitle}>Categories</Text>
+                <Text style={styles.sectionTitle}>الفئات</Text>
                 <CategoriesSection />
-                <Text style={styles.sectionTitle}>Prices</Text>
+                <Text style={styles.sectionTitle}>أسعار الذهب</Text>
                 <PricesSection
                     oncePrice={goldInternationalPriceKwd?.price}
                     price24K={goldInternationalPriceKwd?.twentyFour}
                     price22K={goldInternationalPriceKwd?.twentyTwo}
                     price21K={goldInternationalPriceKwd?.twentyOne}
                 />
-                <Text style={styles.sectionTitle}>Items For You</Text>
+                <Text style={styles.sectionTitle}>قائمة المنتجات</Text>
                 <>
                     <View style={styles.itemsContainer}>
                         {itemData?.length === 0 ? (
@@ -279,7 +279,7 @@ const HomeScreen = ({ getAllCategories, getInternationalGoldPriceLatest, getAllI
                                             source={{ uri: `https://apii.test.sultangold.net/public${e?.mainImage}` }}
                                             style={styles.itemImage}
                                         />
-                                        <Text style={styles.itemPrice}>{e?.price} KWD</Text>
+                                        <Text style={styles.itemPrice}>{e?.price} دينار</Text>
                                     </TouchableOpacity>
                                 );
                             }))}
@@ -294,7 +294,7 @@ const HomeScreen = ({ getAllCategories, getInternationalGoldPriceLatest, getAllI
                 </>
             </View>
             <View style={styles.footer}>
-                <Text style={styles.footerText}>© 2023 Your App</Text>
+                <Text style={styles.footerText}>© 2024 Sultan Gold</Text>
             </View>
         </ScrollView>
     );

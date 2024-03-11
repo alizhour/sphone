@@ -26,6 +26,7 @@ const App = ({ userData, setSelectedMode }: any) => {
     return (
         <Layouts
             userData={userData}
+            setSelectedMode={setSelectedMode}
         >
             <Stack.Navigator
                 screenOptions={{ headerShown: false, animation: 'none' }}

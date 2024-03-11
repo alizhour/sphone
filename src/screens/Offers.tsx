@@ -107,9 +107,9 @@ const OffersScreen = ({ getOfferItem, getItemOncePriceLatest, route }: ReduxProp
 
     return (
         <ScrollView style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>Offers</Text>
+            <Text style={styles.sectionTitle}>العروضات</Text>
             <View style={styles.container}>
-                <Text style={styles.timerTitle}>Quantity Limited! The offer may end in:</Text>
+                <Text style={styles.timerTitle}>الكمية محدودة! و العرض قد ينتهي بعد:</Text>
                 <Text style={styles.timerText}>
                     {timeLeft.hours.toString().padStart(2, '0')}:
                     {timeLeft.minutes.toString().padStart(2, '0')}:
@@ -125,10 +125,10 @@ const OffersScreen = ({ getOfferItem, getItemOncePriceLatest, route }: ReduxProp
                                 style={styles.itemImage}
                             />
                             <View style={styles.containerLine}>
-                                <Text style={styles.underlinedText}>{e?.price} KWD</Text>
+                                <Text style={styles.underlinedText}>{e?.price} دينار</Text>
                                 <View style={styles.line}></View>
                             </View>
-                            <Text style={styles.itemPrice}>{e?.offerPrice} KWD</Text>
+                            <Text style={styles.itemPrice}>{e?.offerPrice} دينار</Text>
                         </TouchableOpacity>
                     );
                 })}

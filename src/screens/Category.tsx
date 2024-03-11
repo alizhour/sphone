@@ -83,7 +83,7 @@ const CategoryScreen = ({ getItemByCategoryId, getItemOncePriceLatest, route }: 
 
     return (
         <ScrollView style={styles.sectionContainer}>
-            <Text style={styles.sectionTitle}>{category?.englishName}</Text>
+            <Text style={styles.sectionTitle}>{category?.arabicName}</Text>
             <View style={styles.itemsContainer}>
                 {itemsData?.length === 0 ? (
                     <CategorySkeleton />
